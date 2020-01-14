@@ -356,3 +356,12 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
+.home .beach-images {
+  display: flex;
+  justify-content: space-between;
+}
+.home .target-box {
+  border: 2px solid red;
+  margin: 20px auto;
+  height: 200px;
+}
