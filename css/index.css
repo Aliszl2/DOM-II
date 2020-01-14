@@ -360,8 +360,8 @@ img {
   display: flex;
   justify-content: space-between;
 }
-.home .target-box {
+.home .droptarget {
   border: 2px solid red;
   margin: 20px auto;
-  height: 200px;
+  height: 250px;
 }

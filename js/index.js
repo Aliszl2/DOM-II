@@ -67,7 +67,30 @@ const wheel = document.querySelector("div");
 el.onwheel = zoom;
 
 wheel.addEventListener("wheel", zoom);
+
 // [ ] `drag / drop`
+
+const beachball = document.querySelector("#beachball");
+
+beachball.addEventListener("dragstart", function(event) {
+  event.dataTransfer.setData("text", event.target.id);
+});
+beachball.addEventListener("dragover", function(event) {
+  event.preventDefault();
+});
+
+beachball.addEventListener("drop", function(event) {
+  event.preventDefault();
+  console.log(event);
+  if (event.target.className == "droptarget") {
+       var data = event.dataTransfer.getData("text");
+    event.target.appendChild(document.getElementById(data));
+  }
+});
+const parasol = document.querySelector("#parasol");
+//parasol.addEventListener("drop", myScript);
+const coconut = document.querySelector("#coconut");
+//coconut.addEventListener("drop", myScript);
 
 //[ ] `load`
 
