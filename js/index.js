@@ -1,6 +1,5 @@
 // Your code goes here
-// [ x] `mouseover`
-// (Mouse enter and mouse leave destination sections- updates pick your dest picture)
+// [ x] `mouseover`-(Mouse enter and mouse leave destination sections- updates pick your dest picture)
 const hoverSunPic = document.querySelectorAll(".destination .btn")[0];
 
 hoverSunPic.addEventListener("mouseover", event => {
@@ -52,7 +51,7 @@ const firstNameInput = document.getElementsByName("fname")[0];
 firstNameInput.addEventListener("keydown", event => {
   console.log(`User last name entered: ${event.key}`);
 });
-// [ ] `wheel`. Increase decreases size of bottom picture on mouse wheel
+// [ x] `wheel`. Increase decreases size of bottom picture on mouse wheel
 
 function zoom(event) {
   event.preventDefault();
@@ -94,53 +93,8 @@ const coconut = document.querySelector("#coconut");
 
 //[ ] `load`
 
-// [ ] `focus`
-
-// [ ] `resize`
-
-// [x ] `scroll`
-const scroll = document.querySelector(".container");
-document.addEventListener("scroll", event => {
-  turnHeaderPink.style.color = "red";
-});
-
-// [ ] `select`
-
-//[ x] `dblclick`
-let turnHeaderPink = document.querySelector(".logo-heading");
-document.addEventListener("dblclick", function() {
-  turnHeaderPink.style.color = "pink";
-});
-
-// Input into hidden form on selecting register or log in
-const register = document.querySelectorAll(".nav-link")[2];
-
-register.addEventListener("click", event => {
-  document.querySelector(".hidden-form").style.display = "flex";
-  // document.querySelector('.hidden-form').style.justifycontent = 'center';
-  document.querySelector(".hidden-form").style.backgroundColor = "yellow";
-  document.querySelector("#email").style.display = "block";
-  document.querySelector("#password2").style.display = "block";
-  event.stopPropagation();
-
-  console.log("unhide registration form");
-  console.log(event);
-  // event.stopImmediatePropagation();
-});
-const signIn = document.querySelectorAll(".nav-link")[3];
-signIn.addEventListener("click", event => {
-  document.querySelector(".hidden-form").style.display = "block";
-  document.querySelector(".hidden-form").style.backgroundColor = "turquoise";
-  document.querySelector("#email").style.display = "none";
-  document.querySelector("#password2").style.display = "none";
-  event.stopPropagation();
-
-  console.log("unhide sign in form");
-  console.log(event);
-});
-
-// Blur/ focus - if passwords not the same or if email is not valid box goes red
-
+// [ x] `focus`
+// if passwords not the same or if email is not valid box goes red else green
 const blur = document.querySelector('input[name="email"]');
 blur.addEventListener("blur", event => {
   if (document.querySelector("#email").value.includes("@")) {
@@ -168,6 +122,62 @@ blur.addEventListener("blur", event => {
 // blur.addEventListener('onfocus', runEvent);
 // // blur.addEventListener('blur', runEvent);
 
+// [ ] `resize`
+
+// [x ] `scroll`-title red, top image goes sepia
+const scroll = document.querySelector(".container");
+document.addEventListener("scroll", event => {
+  turnHeaderPink.style.color = "red";
+});
+let sepia = document.querySelector("img");
+document.addEventListener("wheel", function() {
+  sepia.style.filter = "sepia(100%)";
+  sepia.style.transition = "1s";
+});
+// [ ] `select`
+function logSelection(event) {
+  const log = document.getElementById('log');
+  const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+  log.textContent = `You selected: ${selection}`;
+}
+
+const input = document.querySelector('input');
+input.addEventListener('select', logSelection);
+
+//[ x] `dblclick`
+let turnHeaderPink = document.querySelector(".logo-heading");
+document.addEventListener("dblclick", function() {
+  turnHeaderPink.style.color = "pink";
+});
+
+//onclick nav links(login or register)reveals hidden form elements
+const register = document.querySelectorAll(".nav-link")[2];
+
+register.addEventListener("click", event => {
+  document.querySelector(".hidden-form").style.display = "flex";
+   document.querySelector(".hidden-form").style.backgroundColor = "yellow";
+  document.querySelector("#email").style.display = "block";
+  document.querySelector("#password2").style.display = "block";
+  event.stopPropagation();
+
+  console.log("unhide registration form");
+  console.log(event);
+  
+});
+const signIn = document.querySelectorAll(".nav-link")[3];
+signIn.addEventListener("click", event => {
+  document.querySelector(".hidden-form").style.display = "block";
+  document.querySelector(".hidden-form").style.backgroundColor = "turquoise";
+  document.querySelector("#email").style.display = "none";
+  document.querySelector("#password2").style.display = "none";
+  event.stopPropagation();
+
+  console.log("unhide sign in form");
+  console.log(event);
+});
+
+
+
 // Submit
 const form = document.querySelector("form");
 
@@ -188,12 +198,4 @@ form.addEventListener("submit", function(event) {
   document.getElementById("password").value = "";
   document.getElementById("password2").value = "";
   //   document.querySelector('.hidden-form').input.reset();
-});
-
-// wheel
-
-let sepia = document.querySelector("img");
-document.addEventListener("wheel", function() {
-  sepia.style.filter = "sepia(100%)";
-  sepia.style.transition = "1s";
 });
