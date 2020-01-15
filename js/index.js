@@ -144,15 +144,16 @@ blur.addEventListener('blur', event => {
 
 // [ ] `resize`
 
-// [x ] `scroll`-title red, top image goes sepia
+// [x ] `scroll`-browser-title red, scroll window-top image goes sepia
+let sepia = document.querySelector('img');
+sepia.addEventListener('wheel', function(e) {
+  e.stopImmediatePropagation();
+  sepia.style.filter = 'sepia(100%)';
+  sepia.style.transition = '1s';
+});
 const scroll = document.querySelector('.container');
 document.addEventListener('scroll', event => {
   turnHeaderPink.style.color = 'red';
-});
-let sepia = document.querySelector('img');
-document.addEventListener('wheel', function() {
-  sepia.style.filter = 'sepia(100%)';
-  sepia.style.transition = '1s';
 });
 // [ ] `select`
 function logSelection(event) {
