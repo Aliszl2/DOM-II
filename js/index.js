@@ -89,7 +89,16 @@ beachball.addEventListener('dragstart', e => {
   console.log(e);
   // e.target.appendChild(document.getElementById(data));
 });
-
+coconut.addEventListener('dragstart', e => {
+  e.dataTransfer.setData('text', e.target.id);
+  console.log(e);
+  // e.target.appendChild(document.getElementById(data));
+});
+parasol.addEventListener('dragstart', e => {
+  e.dataTransfer.setData('text', e.target.id);
+  console.log(e);
+  // e.target.appendChild(document.getElementById(data));
+});
 dropDiv.addEventListener('drop', e => {
   e.preventDefault();
   let data = e.dataTransfer.getData('text');
@@ -100,22 +109,7 @@ dropDiv.addEventListener('drop', e => {
 dropDiv.addEventListener('dragover', e => {
   e.preventDefault();
 });
-// beachball.addEventListener('dragover', function(event) {
-//   event.preventDefault();
-// });
 
-// beachball.addEventListener('drop', function(event) {
-//   event.preventDefault();
-//   console.log(event);
-//   if (event.target.className == 'droptarget') {
-//     var data = event.dataTransfer.getData('text');
-//     event.target.appendChild(document.getElementById(data));
-//   }
-// });
-// const parasol = document.querySelector('#parasol');
-//parasol.addEventListener("drop", myScript);
-// const coconut = document.querySelector('#coconut');
-//coconut.addEventListener("drop", myScript);
 
 //[ ] `load`
 
