@@ -359,6 +359,9 @@ img {
 .home .beach-images {
   display: flex;
   justify-content: space-between;
+  border: 2px solid red;
+  margin: 20px auto;
+  height: 250px;
 }
 .home .droptarget {
   border: 2px solid red;
