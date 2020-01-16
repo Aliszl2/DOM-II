@@ -215,6 +215,12 @@ img {
   color: #212529;
   text-decoration: none;
 }
+.main-navigation .hidden-form {
+  display: none;
+  max-width: 175px;
+  height: auto;
+  float: right;
+}
 .footer {
   width: 100%;
   border-top: 2px dashed #C0C0C0;
@@ -349,4 +355,19 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
+}
+.home .beach-images {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid red;
+  margin: 20px auto;
+  height: 250px;
+}
+.home .droptarget {
+  border: 2px solid red;
+  margin: 20px auto;
+  height: 250px;
+}
+span {
+  color: red;
 }
